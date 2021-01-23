@@ -40,3 +40,6 @@ set shiftwidth=2
 " turn of for nerd commenter
 filetype plugin on
 
+" remove tilde '~' from emty lines and replace with space ' '
+set fcs=eob:\ 
+
