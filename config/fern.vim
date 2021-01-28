@@ -1,15 +1,18 @@
-" Neovim users SHOULD add antoinemadec/FixCursorHold.nvim for now (See #120)
-let g:cursorhold_updatetime = 100
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" theming for fern
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" staight from docs for glyph-palette (no clue what this does)
-augroup my-glyph-palette
-  autocmd! *
-  autocmd FileType fern call glyph_palette#apply()
-  autocmd FileType nerdtree,startify call glyph_palette#apply()
-augroup END
+" custom styling for modified or not
+let g:fern_git_status#indexed_character  = '■'
+let g:fern_git_status#stained_character  = '■'
 
-" Exclude in fern
-let g:fern#default_exclude = '^\%(\.git\|node_modules\)$'
+" custom folder nest symbols
+let g:fern#mark_symbol                       = '●'
+let g:fern#renderer#default#collapsed_symbol = '> '
+let g:fern#renderer#default#expanded_symbol  = 'v '
+let g:fern#renderer#default#leading          = ' '
+let g:fern#renderer#default#leaf_symbol      = ' '
+let g:fern#renderer#default#root_symbol      = '~ '
 
 " nerdfont renderer
 echo nerdfont#find()
@@ -19,16 +22,21 @@ let g:fern#renderer = 'nerdfont'
 :autocmd FileType fern set nonumber
 :autocmd FileType fern set signcolumn=no
 
+" custom configuration for lightline with fern
+:autocmd FileType fern let g:lightline = {
+			\ 'active': {
+			\ 	'left': [[],],
+			\ 	'right': [[],],
+			\},
+			\}
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" mappings 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " disable all default fern mappings
 let g:fern#disable_default_mappings = 1
-
-" custom folder nest symbols
-let g:fern#mark_symbol                       = '●'
-let g:fern#renderer#default#collapsed_symbol = '> '
-let g:fern#renderer#default#expanded_symbol  = 'v '
-let g:fern#renderer#default#leading          = ' '
-let g:fern#renderer#default#leaf_symbol      = ' '
-let g:fern#renderer#default#root_symbol      = '~ '
 
 " toggle binding for fern
 noremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=25<CR><C-w>=
@@ -61,7 +69,7 @@ function! FernInit() abort
   nmap <buffer> k <Plug>(fern-action-mark:toggle)
 " will open file in horizontal split
   nmap <buffer> h <Plug>(fern-action-open:split)
-" will open file in verticle split
+" will open file in vertical split
   nmap <buffer> v <Plug>(fern-action-open:vsplit)
 " move forward in a directory
   nmap <buffer><nowait> < <Plug>(fern-action-leave)
@@ -77,4 +85,28 @@ augroup FernGroup
   autocmd!
   autocmd FileType fern call FernInit()
 augroup END
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" extra
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Neovim users SHOULD add antoinemadec/FixCursorHold.nvim for now (See #120)
+let g:cursorhold_updatetime = 100
+
+" speed improvements specific for fern (See docs)
+let g:fern_git_status#disable_ignored    = 1
+let g:fern_git_status#disable_untracked  = 1
+let g:fern_git_status#disable_submodules = 1
+
+" straight from docs for glyph-palette (no clue what this does)
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
+" Exclude in fern
+let g:fern#default_exclude = '^\%(\.git\|node_modules\)$'
+let g:fern#default_include = ''
 
