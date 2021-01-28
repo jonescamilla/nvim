@@ -19,10 +19,12 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'leafgarland/typescript-vim'
 " Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
-"
-" from ben awad
+
+" get
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
+" fuzzy finder
+Plug 'ctrlpvim/ctrlp.vim'
+" comment out blocks or single lines of code like vscode
 Plug 'preservim/nerdcommenter'
 
 " lightline (disabled because it cannot be disabled for fern 🌿)
