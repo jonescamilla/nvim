@@ -7,6 +7,15 @@
     "json",
     "javascriptreact",
     "typescript.tsx",
-    "graphql"
+    "graphql",
+    "vim"
+  ],
+  "cSpell.userWords": ["Fira", "alacritty", "untracked"],
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".vscode"
   ]
 }
