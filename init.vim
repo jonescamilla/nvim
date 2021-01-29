@@ -4,33 +4,46 @@ call plug#begin(stdpath('data') . '/plugged')
 " Syntax highlight
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" fern.vim
+" fern.vim (file tree)
 Plug 'lambdalisue/fern.vim'
 Plug 'antoinemadec/FixCursorHold.nvim' " suggested in fern docs
 Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/glyph-palette.vim'
+Plug 'lambdalisue/glyph-palette.vim' " file icons
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 
-" Theme
+" Themes
 Plug 'tomasiser/vim-code-dark'
+Plug 'arcticicestudio/nord-vim'
+" Plug 'abnt713/vim-hashpunk'
+" Plug 'phanviet/sidonia'
+" Plug 'logico/typewriter-vim'
+" Plug 'kadekillary/skull-vim'
+" Plug 'karoliskoncevicius/oldbook-vim'
+
+" JS Syntax
+Plug 'othree/yajs.vim'
 
 " TS Syntax
-Plug 'leafgarland/typescript-vim'
-" Plug 'HerringtonDarkholme/yats.vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
+" (trash w/ codedark)
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
 
-" get
+" git
 Plug 'airblade/vim-gitgutter'
+
 " fuzzy finder
 Plug 'ctrlpvim/ctrlp.vim'
-" comment out blocks or single lines of code like vscode
+
+" comment out blocks or single lines of code
 Plug 'preservim/nerdcommenter'
 
 " lightline (disabled because it cannot be disabled for fern 🌿)
-" Plug 'itchyny/lightline.vim'
-" Plug 'itchyny/vim-gitbranch'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch' " returns name of current branch
 
+" terminate plugin system
 call plug#end()
 
 " general config
@@ -55,9 +68,4 @@ source ~/.config/nvim/config/terminal.vim
 source ~/.config/nvim/config/prettier.vim
 
 " lightline configuration
-" source ~/.config/nvim/config/lightline.vim
-
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_map = '<Leader>p'
-
+source ~/.config/nvim/config/lightline.vim
