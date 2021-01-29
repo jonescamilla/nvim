@@ -14,21 +14,13 @@ let g:fern#renderer#default#leading          = ' '
 let g:fern#renderer#default#leaf_symbol      = ' '
 let g:fern#renderer#default#root_symbol      = '~ '
 
-" nerdfont renderer
+" nerdfont renderer (is the echo necessary?)
 echo nerdfont#find()
 let g:fern#renderer = 'nerdfont'
 
 " turn off line numbers and synbol column in fern
 :autocmd FileType fern set nonumber
 :autocmd FileType fern set signcolumn=no
-
-" custom configuration for lightline with fern
-:autocmd FileType fern let g:lightline = {
-			\ 'active': {
-			\ 	'left': [[],],
-			\ 	'right': [[],],
-			\},
-			\}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -63,6 +55,7 @@ function! FernInit() abort
   nmap <buffer> M <Plug>(fern-action-rename)
 " toggles showing hidden files or not
   nmap <buffer> . <Plug>(fern-action-hidden-toggle)
+  nmap <buffer> , <Plug>(fern-action-hidden-toggle)
 " reloads fern to matche w/ system (fern is not aware of outside changes)
   nmap <buffer> r <Plug>(fern-action-reload)
 " mark a file with fern
