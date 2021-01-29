@@ -8,14 +8,32 @@
     "javascriptreact",
     "typescript.tsx",
     "graphql",
-    "vim"
+    "vim",
+    "c"
   ],
-  "cSpell.userWords": ["Fira", "alacritty", "untracked"],
+  "cSpell.userWords": [
+    "Escamilla",
+    "Fira",
+    "Formik",
+    "Omni",
+    "alacritty",
+    "chakra",
+    "firstname",
+    "formik's",
+    "keeb",
+    "lastname",
+    "nord",
+    "npm's",
+    "sidonia",
+    "untracked"
+  ],
   "cSpell.ignorePaths": [
     "**/package-lock.json",
     "**/node_modules/**",
     "**/vscode-extension/**",
     "**/.git/objects/**",
-    ".vscode"
-  ]
+    ".vscode/**",
+    ".dist/**"
+  ],
+  "clangd.path": "/Users/admin/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
 }
