@@ -1,11 +1,6 @@
 " set line numbers in vim
 set number
 
-" fix colors settings in terminal when setting termguicolors (unsure if it
-" does something)
-let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
-
 " autosave feature
 "let g:workspace_autosave_always = 1
 " updatetime=3000
@@ -37,16 +32,13 @@ nmap <C-right> <C-w><right>
 nmap <ALT+left> <b>
 nmap <ALT+right> <w>
 
-" used to drag lines in vim
+" used to drag lines in vim (alt+j, alt+k)
 nnoremap ˚ :m .+1<CR>==
 nnoremap ∆ :m .-2<CR>==
 inoremap ˚ <Esc>:m .+1<CR>==gi
 inoremap ∆ <Esc>:m .+1<CR>==gi
 vnoremap ˚ :m '>+1<CR>gv=gv
 vnoremap ∆ :m '<-2<CR>gv=gv
-
-"nmap <Alt+up>
-"nmap <Alt+down>
 
 " make the sign column the number column (save space)
 set signcolumn=number
@@ -71,8 +63,18 @@ filetype plugin on
 " coc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" mapping for suggestion (pulled from coc-spell-checker)
-vmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
+" mapping for suggestion (pulled from coc-spell-checker) DUPLICATE IN coc.vim
+" vmap <leader>a <Plug>(coc-codeaction-selected)
+" nmap <leader>a <Plug>(coc-codeaction-selected)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrlp
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard', '.dist']
+let g:ctrlp_map = '<Leader>p'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
