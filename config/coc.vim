@@ -39,11 +39,17 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" Remap keys for gotos
+" Remap keys for goto
+" Go to Definition
 nmap <silent> gd <Plug>(coc-definition)
+" Go to tYpe
 nmap <silent> gy <Plug>(coc-type-definition)
+" Go to Implementation
 nmap <silent> gi <Plug>(coc-implementation)
+" Go to References
 nmap <silent> gr <Plug>(coc-references)
+" Go Back to previous puffer
+nmap <silent> gb <C-o>
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -83,12 +89,14 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" TODO what the hell is this
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
+" TODO what the hell is this
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nmap <silent> <C-d> <Plug>(coc-range-select)
 xmap <silent> <C-d> <Plug>(coc-range-select)
