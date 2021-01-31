@@ -43,6 +43,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch' " returns name of current branch
 
+" delete pairs - TODO learn shortcuts
+Plug 'tpope/vim-surround'
+
 " terminate plugin system
 call plug#end()
 
