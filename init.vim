@@ -15,20 +15,12 @@ Plug 'lambdalisue/nerdfont.vim'
 " Themes
 Plug 'tomasiser/vim-code-dark'
 Plug 'arcticicestudio/nord-vim'
-" Plug 'abnt713/vim-hashpunk'
-" Plug 'phanviet/sidonia'
-" Plug 'logico/typewriter-vim'
-" Plug 'kadekillary/skull-vim'
-" Plug 'karoliskoncevicius/oldbook-vim'
 
 " JS Syntax
 Plug 'othree/yajs.vim'
 
 " TS Syntax
 Plug 'HerringtonDarkholme/yats.vim'
-" (trash w/ codedark)
-" Plug 'leafgarland/typescript-vim'
-" Plug 'peitalin/vim-jsx-typescript'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -66,9 +58,6 @@ source ~/.config/nvim/config/git.vim
 
 " terminal configuration
 source ~/.config/nvim/config/terminal.vim
-
-" prettier configuration (currently nothing)
-source ~/.config/nvim/config/prettier.vim
 
 " lightline configuration
 source ~/.config/nvim/config/lightline.vim
