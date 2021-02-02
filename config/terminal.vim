@@ -13,6 +13,8 @@ function! Term_toggle(height)
             exec "buffer " . g:term_buf
         catch
             call termopen($SHELL, {"detach": 0})
+						" set the terminal to not have line numbers
+						setlocal nonu
             let g:term_buf = bufnr("")
         endtry
         startinsert!
