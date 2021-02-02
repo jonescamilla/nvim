@@ -1,0 +1,8 @@
+# will only force update based on coc changes and not new vocab
+coc-settings.json
+
+# no clue
+.netrwhist
+
+# TODO work in progress lua conversion 
+lua/
