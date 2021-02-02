@@ -2,6 +2,9 @@
 
 This is a personal repository for my nvim configuration though there may be some interesting items worth taking.
 
+## desktop
+![desktop](https://i.imgur.com/8QaEpg3.png)
+
 ## neofetch
 ![neofetch](https://i.imgur.com/JGXmzHS.png)
 
