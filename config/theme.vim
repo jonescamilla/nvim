@@ -1,6 +1,6 @@
-" set color theme ("vscode like theme")
-" options [codedark, nord, hashpunk, sidonia]
+" set nvim theme
 colorscheme nord
+
 " adjust colors for terminals properly
 set termguicolors
 
