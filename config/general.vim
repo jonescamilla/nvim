@@ -27,12 +27,7 @@ nmap <C-down> <C-w><down>
 nmap <C-left> <C-w><left>
 nmap <C-right> <C-w><right>
 
-" make around words like normal text editor (currently doesn't work [probably
-" for the better])
-nmap <ALT+left> <b>
-nmap <ALT+right> <w>
-
-" used to drag lines in vim (alt+j, alt+k)
+" used to drag lines in vim (alt+j, alt+k) - symbols are result of ALT + <key>
 nnoremap ˚ :m .+1<CR>==
 nnoremap ∆ :m .-2<CR>==
 inoremap ˚ <Esc>:m .+1<CR>==gi
@@ -43,13 +38,15 @@ vnoremap ∆ :m '<-2<CR>gv=gv
 " make the sign column the number column (save space)
 set signcolumn=number
 
+" unsure on what these do (pulled from ben awad config) 
+" TODO research function
 set smarttab
 set cindent
 set tabstop=2
 set shiftwidth=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nerdcommenter
+" nerdcommenter - comment out multiple lines of code
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " add space in nerd commenter
@@ -60,18 +57,7 @@ filetype plugin on
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" coc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" mapping for suggestion (pulled from coc-spell-checker) DUPLICATE IN coc.vim
-" vmap <leader>a <Plug>(coc-codeaction-selected)
-" nmap <leader>a <Plug>(coc-codeaction-selected)
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrlp
+" ctrlp - fuzzy finder
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard', '.dist']
 let g:ctrlp_map = '<Leader>p'
