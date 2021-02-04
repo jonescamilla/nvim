@@ -8,25 +8,31 @@
     "javascriptreact",
     "typescript.tsx",
     "graphql",
-    "vim",
-    "c"
+    "vim"
   ],
   "cSpell.userWords": [
     "Escamilla",
+    "Fatt",
     "Fira",
     "Formik",
+    "Madhani",
     "Omni",
+    "React's",
+    "Suneera",
     "alacritty",
     "chakra",
     "firstname",
     "formik's",
+    "ijkl",
     "keeb",
     "lastname",
     "myoga",
     "nord",
     "npm's",
     "nvim",
+    "riverlogic",
     "sidonia",
+    "ui's",
     "untracked"
   ],
   "cSpell.ignorePaths": [
@@ -37,5 +43,30 @@
     ".vscode/**",
     ".dist/**"
   ],
-  "clangd.path": "/Users/admin/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
+  "cSpell.languageSettings": [
+    { "languageId": "*", "local": "en", "dictionaries": ["wordsEn"] },
+    { "languageId": "*", "local": "en-US", "dictionaries": ["wordsEn"] },
+    { "languageId": "*", "local": "en-GB", "dictionaries": ["wordsEnGb"] },
+    {
+      "languageId": "*",
+      "dictionaries": ["companies", "softwareTerms", "misc"]
+    },
+    {
+      "languageId": "python",
+      "allowCompoundWords": true,
+      "dictionaries": ["python"]
+    },
+    { "languageId": "go", "allowCompoundWords": true, "dictionaries": ["go"] },
+    { "languageId": "javascript", "dictionaries": ["typescript", "node"] },
+    { "languageId": "javascriptreact", "dictionaries": ["typescript", "node"] },
+    { "languageId": "typescript", "dictionaries": ["typescript", "node"] },
+    { "languageId": "typescriptreact", "dictionaries": ["typescript", "node"] },
+    {
+      "languageId": "html",
+      "dictionaries": ["html", "fonts", "typescript", "css"]
+    },
+    { "languageId": "css", "dictionaries": ["fonts", "css"] },
+    { "languageId": "less", "dictionaries": ["fonts", "css"] },
+    { "languageId": "scss", "dictionaries": ["fonts", "css"] }
+  ]
 }
