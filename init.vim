@@ -19,8 +19,8 @@ Plug 'arcticicestudio/nord-vim'
 " JS Syntax hightlighting
 Plug 'othree/yajs.vim'
 
-" TS Syntax hightlighting
-Plug 'HerringtonDarkholme/yats.vim'
+" delete pairs - TODO learn shortcuts
+Plug 'tpope/vim-surround'
 
 " git integration in gutter (numbers line)
 Plug 'airblade/vim-gitgutter'
@@ -56,8 +56,12 @@ source ~/.config/nvim/config/coc.vim
 " git configuration
 source ~/.config/nvim/config/git.vim
 
-" terminal configuration
-source ~/.config/nvim/config/terminal.vim
+" returns the absolute path to files in nvim/
+function! Dot(path)
+	return '~/.config/nvim/' . a:path
+endfunction
 
-" lightline configuration
-source ~/.config/nvim/config/lightline.vim
+" iterate over `config/` and source all files within that end in `.vim`
+for file in split(glob(Dot('config/*.vim')), '\n')
+	execute "source" file
+endfor
