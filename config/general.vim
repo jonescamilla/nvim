@@ -1,3 +1,7 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" general settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " set line numbers in vim
 set number
 
@@ -7,17 +11,6 @@ nmap U <C-r>
 " set vim to use an undo file
 set undofile
 
-" autosave feature
-"let g:workspace_autosave_always = 1
-" updatetime=3000
-
-" set new leader key (yet to find a better key to use than \)
-" let mapleader = ' '
-
-" remap : to ; for ease of commands
-nnoremap ; :
-nnoremap : ;
-
 " highlight the line the cursor is currently at
 set cursorline
 
@@ -26,6 +19,30 @@ set ignorecase
 
 " enable mouse interaction
 set mouse=a
+
+" make the sign column the number column (save space)
+set signcolumn=number
+
+" the numbers of spaces that a `<Tab>` in the file stands for
+set tabstop=2
+
+" ¯\_(ツ)_/¯ I have no clue what these REALLY mean/do from quick look at docs
+set smarttab
+set cindent
+set shiftwidth=2 
+
+" autosave feature
+"let g:workspace_autosave_always = 1
+" updatetime=3000
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" general mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" remap : to ; for ease of commands
+nnoremap ; :
+nnoremap : ;
 
 " easier way to navigate between vim panes/buffers
 " Ctrl <arrow keys> -> Ctrl w + <arrow keys>
@@ -43,33 +60,19 @@ inoremap ∆ <Esc>:m .+1<CR>==gi
 vnoremap ˚ :m '>+1<CR>gv=gv
 vnoremap ∆ :m '<-2<CR>gv=gv
 
-" make the sign column the number column (save space)
-set signcolumn=number
-
-" the numbers of spaces that a `<Tab>` in the file stands for
-set tabstop=2
-
-" ¯\_(ツ)_/¯ I have no clue what these REALLY mean/do from quick look at docs
-set smarttab
-set cindent
-set shiftwidth=2 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" auto-complete - TODO - incomplete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" turn off the status the bottom that displays your current suggestion
-set shortmess+=c
+" set new leader key (yet to find a better key to use than \)
+" let mapleader = ' '
 
 " Navigate the complete menu items like Ctrl + n / Ctrl + p would
-inoremap <expr> <Down> pumvisible() ? "<C-n>" : "<Down>"
-inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
+" inoremap <expr> <Down> pumvisible() ? "<C-n>" : "<Down>"
+" inoremap <expr> <Up> pumvisible() ? "<C-p>" : "<Up>"
 
 " select the complete menu item like Ctrl + y would
-inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
-inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
+" inoremap <expr> <Right> pumvisible() ? "<C-y>" : "<Right>"
+" inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
 
 " cancel the complete menu item like Ctrl + e would
-inoremap <expr> <Left> pumvisible() ? "<C-e>": "<Left>"
+" inoremap <expr> <Left> pumvisible() ? "<C-e>": "<Left>"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
