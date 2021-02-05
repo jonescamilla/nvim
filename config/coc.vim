@@ -1,3 +1,29 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nvim configurations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" if hidden is not set, TextEdit might fail.
+set hidden 
+
+" Some servers have issues with backup files, see #649 
+" TODO - investigate functionality
+" set nobackup 
+" set nowritebackup 
+
+" Give more space for displaying messages
+set cmdheight=2 
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" coc configurations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " coc config
 let g:coc_global_extensions = [
   \ 'coc-snippets',
@@ -7,12 +33,6 @@ let g:coc_global_extensions = [
   \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
-" if hidden is not set, TextEdit might fail.
-set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
 
 " TODO does not seem to work or is working in a fashion that I did not expect
 " Use tab for trigger completion with characters ahead and navigate.
