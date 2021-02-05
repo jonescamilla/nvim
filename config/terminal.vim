@@ -1,6 +1,12 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" custom terminal configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " variables used in Term_toggle
 let g:term_buf = 0
 let g:term_win = 0
+let term_size=15
+
 " toggles terminal based on certain conditions and accepts height
 function! Term_toggle(height)
     if win_gotoid(g:term_win)
@@ -22,10 +28,6 @@ function! Term_toggle(height)
     endif
 endfunction
 
-" variable for adjusting terminal height
-let term_size=15
-
 " allow for terminal toggle
 nnoremap <Leader>t :call Term_toggle(term_size)<cr>
 tnoremap <Leader>t <C-\><C-n>:call Term_toggle(term_size)<cr>
-
