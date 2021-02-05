@@ -41,32 +41,43 @@ let g:vimshell_force_overwrite_statusline = 0
 
 " ignore fern and append branch name with a branch indicator
 function! LightlineGit()
-	return &filetype ==# 'fern' ? '' : gitbranch#name() . ' ⎇ '
-endfunction
-
-" ignore fern or show name or show no name
-function! LightlineFilename()
-  return &filetype ==# 'fern' ? '' : expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+	return IsIgnored() ? '' : gitbranch#name() . ' ⎇ '
 endfunction
 
 " ignore fern or show mode normally 
 function! LightlineMode()
-  return &filetype ==# 'fern' ? '' : lightline#mode()
+  return IsFern() ? '' : lightline#mode()
 endfunction
 
-" ignore fern and show path from file name w/ dynamic shortening
+" show path from file name w/ dynamic shortening
 function! LightlineTruncatedFileName()
-	"ignore fern
-	if &filetype ==# 'fern'
+	if IsIgnored()
 		return ''
 	endif
 	" set local variable that holds the path
 	let l:filePath = expand('%')
 		" if the window is greater than 100 display entire path
-    if winwidth(0) > 100
-        return l:filePath
+		if winwidth(0) > 100
+			return l:filePath
 		" else shorten the path
     else
-        return pathshorten(l:filePath)
+			return pathshorten(l:filePath)
     endif
 endfunction
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" helper Lightline functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function IsFern()
+	return &filetype ==# 'fern' ? 1 : 0
+endfunction
+
+function IsTerm()
+	return split(expand('%t'), '/')[-1] == 'fish' ? 1 : 0
+endfunction
+
+function IsIgnored()
+	return IsFern() || IsTerm() ? 1 : 0
+endfunction
+
