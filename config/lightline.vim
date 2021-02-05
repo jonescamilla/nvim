@@ -1,6 +1,11 @@
 " disable show at bottom (--insert--)
 set noshowmode
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lightline Configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " custom configuration for lightline
 let g:lightline = {
       \ 'colorscheme': 'nord',
@@ -20,6 +25,16 @@ let g:lightline = {
 			\ },
       \ }
 
+" not sure what these do (pulled from lightline docs)
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lightline functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " ignore fern and append branch name with a branch indicator
 function! LightlineGit()
 	return &filetype ==# 'fern' ? '' : gitbranch#name() . ' ⎇ '
@@ -37,7 +52,7 @@ endfunction
 
 " ignore fern and show path from file name w/ dynamic shortening
 function! LightlineTruncatedFileName()
-	"ignore fern"
+	"ignore fern
 	if &filetype ==# 'fern'
 		return ''
 	endif
@@ -51,8 +66,3 @@ function! LightlineTruncatedFileName()
         return pathshorten(l:filePath)
     endif
 endfunction
-
-" not sure what these do (pulled from lightline docs)
-let g:unite_force_overwrite_statusline = 0
-let g:vimfiler_force_overwrite_statusline = 0
-let g:vimshell_force_overwrite_statusline = 0
