@@ -15,23 +15,41 @@ let g:lightline = {
 			\ },
 			\ 'component_function': {
 			\ 	'gitbranch': 'LightlineGit',
-			\ 	'filename' : 'LightlineFilename',
-			\ 	'mode' : 'LightlineMode'
+			\ 	'mode' : 'LightlineMode',
+			\ 	'filename' : 'LightlineTruncatedFileName'
 			\ },
       \ }
 
+" ignore fern and append branch name with a branch indicator
 function! LightlineGit()
-	return &filetype ==# 'fern' ? '' : gitbranch#name()
+	return &filetype ==# 'fern' ? '' : gitbranch#name() . ' ⎇ '
 endfunction
 
+" ignore fern or show name or show no name
 function! LightlineFilename()
   return &filetype ==# 'fern' ? '' : expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
 endfunction
 
+" ignore fern or show mode normally 
 function! LightlineMode()
-  return expand('%:t') ==# 'ControlP' ? 'CtrlP' :
-				\ &filetype ==# 'fern' ? '' :
-        \ lightline#mode()
+  return &filetype ==# 'fern' ? '' : lightline#mode()
+endfunction
+
+" ignore fern and show path from file name w/ dynamic shortening
+function! LightlineTruncatedFileName()
+	"ignore fern"
+	if &filetype ==# 'fern'
+		return ''
+	endif
+	" set local variable that holds the path
+	let l:filePath = expand('%')
+		" if the window is greater than 100 display entire path
+    if winwidth(0) > 100
+        return l:filePath
+		" else shorten the path
+    else
+        return pathshorten(l:filePath)
+    endif
 endfunction
 
 " not sure what these do (pulled from lightline docs)
