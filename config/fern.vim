@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fern settings
+" fern configurations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Neovim users SHOULD add antoinemadec/FixCursorHold.nvim for now (See #120)

@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mappings
+" git mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " turn on the preview for a github hunk
@@ -11,7 +11,7 @@ nmap ghu <Plug>(GitGutterUndoHunk)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" theming
+" git theming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight GitGutterAdd guifg=#5F884D ctermfg=2
 highlight GitGutterChange guifg=#D3B67B ctermfg=3
