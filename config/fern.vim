@@ -1,30 +1,22 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" theming for fern
+" fern settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" custom styling for modified or not
-let g:fern_git_status#indexed_character  = '■'
-let g:fern_git_status#stained_character  = '■'
+" Neovim users SHOULD add antoinemadec/FixCursorHold.nvim for now (See #120)
+let g:cursorhold_updatetime = 100
 
-" custom folder nest symbols
-let g:fern#mark_symbol                       = '●'
-let g:fern#renderer#default#collapsed_symbol = '> '
-let g:fern#renderer#default#expanded_symbol  = 'v '
-let g:fern#renderer#default#leading          = ' '
-let g:fern#renderer#default#leaf_symbol      = ' '
-let g:fern#renderer#default#root_symbol      = '~ '
+" speed improvements specific for fern (See docs)
+let g:fern_git_status#disable_ignored    = 1
+let g:fern_git_status#disable_untracked  = 1
+let g:fern_git_status#disable_submodules = 1
 
-" nerdfont renderer (is the echo necessary?)
-echo nerdfont#find()
-let g:fern#renderer = 'nerdfont'
-
-" turn off line numbers and synbol column in fern
-:autocmd FileType fern set nonumber
-:autocmd FileType fern set signcolumn=no
+" Exclude and include in fern
+let g:fern#default_exclude = '^\%(\.git\|node_modules\)$'
+let g:fern#default_include = ''
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mappings 
+" fern mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " disable all default fern mappings
@@ -80,16 +72,8 @@ augroup END
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" extra
+" fern theming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Neovim users SHOULD add antoinemadec/FixCursorHold.nvim for now (See #120)
-let g:cursorhold_updatetime = 100
-
-" speed improvements specific for fern (See docs)
-let g:fern_git_status#disable_ignored    = 1
-let g:fern_git_status#disable_untracked  = 1
-let g:fern_git_status#disable_submodules = 1
 
 " straight from docs for glyph-palette (no clue what this does)
 augroup my-glyph-palette
@@ -98,7 +82,22 @@ augroup my-glyph-palette
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
 
-" Exclude in fern
-let g:fern#default_exclude = '^\%(\.git\|node_modules\)$'
-let g:fern#default_include = ''
+" nerdfont renderer (is the echo necessary?)
+echo nerdfont#find()
+let g:fern#renderer = 'nerdfont'
 
+" turn off line numbers and synbol column in fern
+:autocmd FileType fern set nonumber
+:autocmd FileType fern set signcolumn=no
+
+" custom styling for modified or not
+" let g:fern_git_status#indexed_character  = '■'
+" let g:fern_git_status#stained_character  = '■'
+
+" custom folder nest symbols
+" let g:fern#mark_symbol                       = '●'
+" let g:fern#renderer#default#collapsed_symbol = '> '
+" let g:fern#renderer#default#expanded_symbol  = 'v '
+" let g:fern#renderer#default#leading          = ' '
+" let g:fern#renderer#default#leaf_symbol      = ' '
+" let g:fern#renderer#default#root_symbol      = '~ '
