@@ -47,7 +47,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Visual Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" lightline - TODO disable it for fern 🌿
+" lightline - bottom of screen information
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch' " returns name of current branch
 
