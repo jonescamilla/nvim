@@ -4,6 +4,9 @@ set number
 " change the output of `U` to redo
 nmap U <C-r>
 
+" set vim to use an undo file
+set undofile
+
 " autosave feature
 "let g:workspace_autosave_always = 1
 " updatetime=3000
