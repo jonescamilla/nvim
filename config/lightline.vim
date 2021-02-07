@@ -79,10 +79,5 @@ endfunction
 
 " return truthy if the filename is 'fish'
 function IsTerm()
-	try
-		return split(expand('%t'), '/')[-1] == 'fish' ? 1 : 0
-	catch /E684/ " specific error for list errors out of range
-		return 0
-	endtry
-	return 0
+	return get(split(expand('%t'), '/'), -1, '') == 'fish' ? 1 : 0
 endfunction
