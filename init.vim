@@ -25,12 +25,18 @@ Plug 'preservim/nerdcommenter'
 
 " fern.vim (file tree)
 Plug 'lambdalisue/fern.vim'
-Plug 'antoinemadec/FixCursorHold.nvim' 		" suggested in fern docs for nvim users
+Plug 'antoinemadec/FixCursorHold.nvim' 		" suggested in fern docs
 Plug 'lambdalisue/fern-git-status.vim' 		" git integration
 Plug 'lambdalisue/glyph-palette.vim' 		" file icons
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 
+" prettier
+Plug 'prettier/vim-prettier', {
+			\ 'do': 'yarn install',
+			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 
+			\ 	'json', 'graphql', 'markdown', 'vim'],
+			\ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc. Plugins
@@ -52,7 +58,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch' " returns name of current branch
 
 " Themes
-Plug 'tomasiser/vim-code-dark'
 Plug 'arcticicestudio/nord-vim'
 
 " terminate plugin system
