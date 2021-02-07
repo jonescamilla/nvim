@@ -36,6 +36,16 @@ let g:vimshell_force_overwrite_statusline = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Lightline theming
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set variable
+let s:p = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
+" set custom colors (pulled straight from lightline nord theme)
+let s:p.inactive.left = [ ['#E5E9F0', '#2E3440', 0, 21] ] 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
