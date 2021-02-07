@@ -39,45 +39,50 @@ let g:vimshell_force_overwrite_statusline = 0
 " Lightline functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ignore fern and append branch name with a branch indicator
+" ignore all necessary and append branch name with a branch indicator
 function! LightlineGit()
-	return IsIgnored() ? '' : gitbranch#name() . ' ⎇ '
+	let l:branchName = gitbranch#name()
+	return IsIgnored() ? '' 
+				\ : l:branchName == '' ? '' 
+				\ : l:branchName . ' ⎇ ' 
 endfunction
 
-" ignore fern or show mode normally 
+" ignore all necessary and show mode 
 function! LightlineMode()
   return IsFern() ? '' : lightline#mode()
 endfunction
 
-" show path from file name w/ dynamic shortening
+" ignore all necessary and show path from file name w/ dynamic shortening
 function! LightlineTruncatedFileName()
-	if IsIgnored()
-		return ''
-	endif
-	" set local variable that holds the path
 	let l:filePath = expand('%')
-		" if the window is greater than 100 display entire path
-		if winwidth(0) > 100
-			return l:filePath
-		" else shorten the path
-    else
-			return pathshorten(l:filePath)
-    endif
+	return IsIgnored() ? '' 
+				\ : pathshorten(l:filePath)
+
+	" logic specific to shortening path based on window size
+	" \ : winwidth(0) > 100 ? l:filePath 
 endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " helper Lightline functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function IsFern()
-	return &filetype ==# 'fern' ? 1 : 0
-endfunction
 
-function IsTerm()
-	return split(expand('%t'), '/')[-1] == 'fish' ? 1 : 0
-endfunction
-
+" returns truthy if either condition is met
 function IsIgnored()
 	return IsFern() || IsTerm() ? 1 : 0
 endfunction
 
+" return truthy if the filetype is 'fern'
+function IsFern()
+	return &filetype ==# 'fern' ? 1 : 0
+endfunction
+
+" return truthy if the filename is 'fish'
+function IsTerm()
+	try
+		return split(expand('%t'), '/')[-1] == 'fish' ? 1 : 0
+	catch /E684/ " specific error for list errors out of range
+		return 0
+	endtry
+	return 0
+endfunction
