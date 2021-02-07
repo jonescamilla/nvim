@@ -45,8 +45,10 @@ Plug 'prettier/vim-prettier', {
 " delete pairs - TODO learn shortcuts
 Plug 'tpope/vim-surround'
 
-" markdown preview - TODO - only load when an markdown is shown
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+" markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install',
+			\ 'for': 'markdown',
+			\ }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
