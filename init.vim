@@ -46,7 +46,8 @@ Plug 'prettier/vim-prettier', {
 Plug 'tpope/vim-surround'
 
 " markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install',
+Plug 'iamcco/markdown-preview.nvim', { 
+			\ 'do': 'cd app && yarn install',
 			\ 'for': 'markdown',
 			\ }
 
