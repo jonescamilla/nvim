@@ -69,6 +69,8 @@ nmap <silent> gr <Plug>(coc-references)
 " Go Back to previous puffer
 nmap <silent> gb <C-o>
 
+nmap <silent> gf <C-i>
+
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
