@@ -15,11 +15,11 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'gitbranch', 'modified'] ],
+      \             [ 'readonly', 'gitbranch', 'filename', 'modified'] ],
 			\ 	'right': [], 
       \ },
 			\ 'inactive': {
-			\ 	'left': [ ['filename']],
+			\ 	'left': [ ['filename', 'modified']],
 			\ 	'right': [],
 			\ },
 			\ 'component_function': {
@@ -54,7 +54,7 @@ function! LightlineGit()
 	let l:branchName = gitbranch#name()
 	return IsIgnored() ? '' 
 				\ : l:branchName == '' ? '' 
-				\ : l:branchName . ' ⎇ ' 
+				\ : '⎇ ' . l:branchName
 endfunction
 
 " ignore all necessary and show mode 
@@ -64,12 +64,8 @@ endfunction
 
 " ignore all necessary and show path from file name w/ dynamic shortening
 function! LightlineTruncatedFileName()
-	let l:filePath = expand('%')
-	return IsIgnored() ? '' 
-				\ : pathshorten(l:filePath)
-
-	" logic specific to shortening path based on window size
-	" \ : winwidth(0) > 100 ? l:filePath 
+	" winwidth(0) > 100 ? expand('%') " logic for conditional path shortening
+	return IsIgnored() ? '' : pathshorten(expand('%'))
 endfunction
 
 
