@@ -8,8 +8,11 @@
     "javascriptreact",
     "typescript.tsx",
     "graphql",
-    "vim"
+    "vim",
+    "css",
+    "html"
   ],
+
   "cSpell.userWords": [
     "Escamilla",
     "Fatt",
@@ -36,6 +39,7 @@
     "ui's",
     "untracked"
   ],
+
   "cSpell.ignorePaths": [
     "**/package-lock.json",
     "**/node_modules/**",
@@ -44,6 +48,7 @@
     ".vscode/**",
     ".dist/**"
   ],
+
   "cSpell.languageSettings": [
     { "languageId": "*", "local": "en", "dictionaries": ["wordsEn"] },
     { "languageId": "*", "local": "en-US", "dictionaries": ["wordsEn"] },
