@@ -33,12 +33,6 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-hijack.vim' 	" make fern the default file exp
 
-" prettier
-Plug 'prettier/vim-prettier', {
-			\ 'do': 'yarn install',
-			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 
-			\ 	'json', 'graphql', 'markdown', 'vim'],
-			\ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc. Plugins
