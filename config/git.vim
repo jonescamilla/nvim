@@ -9,6 +9,11 @@ nmap ghs <Plug>(GitGutterStageHunk)
 " unstage a hunk
 nmap ghu <Plug>(GitGutterUndoHunk)
 
+" move to next hunk
+nmap gh] <Plug>(GitGutterNextHunk)
+" move the the previous hunk
+nmap gh[ <Plug>(GitGutterPrevHunk)
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " git theming
