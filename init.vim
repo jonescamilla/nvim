@@ -12,7 +12,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " JS Syntax highlighting
 Plug 'jelera/vim-javascript-syntax' 	" better syntax yajs
 
-
 " TS Syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 
