@@ -44,7 +44,7 @@ function! FernInit() abort
 " fern remove action
   nmap <buffer> d <Plug>(fern-action-remove)
   nmap <buffer> m <Plug>(fern-action-move)
-  nmap <buffer> M <Plug>(fern-action-rename)
+  nmap <buffer> R <Plug>(fern-action-rename)
 " toggles showing hidden files or not
   nmap <buffer> , <Plug>(fern-action-hidden-toggle)
 " reloads fern to matche w/ system (fern is not aware of outside changes)
