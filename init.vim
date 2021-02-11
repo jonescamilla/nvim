@@ -9,7 +9,8 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " JS Syntax highlighting
-Plug 'othree/yajs.vim'
+Plug 'jelera/vim-javascript-syntax' 	" better syntax yajs
+
 
 " TS Syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
@@ -25,11 +26,12 @@ Plug 'preservim/nerdcommenter'
 
 " fern.vim (file tree)
 Plug 'lambdalisue/fern.vim'
-Plug 'antoinemadec/FixCursorHold.nvim' 		" suggested in fern docs
-Plug 'lambdalisue/fern-git-status.vim' 		" git integration
-Plug 'lambdalisue/glyph-palette.vim' 		" file icons
+Plug 'antoinemadec/FixCursorHold.nvim' 	" suggested in fern docs
+Plug 'lambdalisue/fern-git-status.vim' 	" git integration
+Plug 'lambdalisue/glyph-palette.vim' 	" file icons
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-hijack.vim' 	" make fern the default file exp
 
 " prettier
 Plug 'prettier/vim-prettier', {
@@ -58,7 +60,7 @@ Plug 'iamcco/markdown-preview.nvim', {
 
 " lightline - bottom of screen information
 Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-gitbranch' " returns name of current branch
+Plug 'itchyny/vim-gitbranch' 	" returns name of current branch
 
 " Themes
 Plug 'arcticicestudio/nord-vim'
