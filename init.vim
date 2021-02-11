@@ -5,7 +5,8 @@ call plug#begin(stdpath('data') . '/plugged')
 " Development Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Syntax highlight, auto-completion, language servers, ...
+" Syntax highlight, auto-completion, spell checker, eslint, prettier
+" language servers: typescript, vim, lua, html, css, json
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " JS Syntax highlighting
