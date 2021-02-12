@@ -10,6 +10,7 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " JS Syntax highlighting
+" Plug 'othree/yajs.vim'
 Plug 'jelera/vim-javascript-syntax' 	" better syntax yajs
 
 " TS Syntax highlighting
@@ -38,7 +39,7 @@ Plug 'lambdalisue/fern-hijack.vim' 	" make fern the default file exp
 " Misc. Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" delete pairs - TODO learn shortcuts
+" delete or replace pairs
 Plug 'tpope/vim-surround'
 
 " markdown preview
