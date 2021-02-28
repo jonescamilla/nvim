@@ -5,9 +5,6 @@
 " set line numbers in vim
 set number
 
-" change the output of `U` to redo
-nmap U <C-r>
-
 " set vim to use an undo file
 set undofile
 
@@ -25,20 +22,29 @@ set signcolumn=number
 
 " the numbers of spaces that a `<Tab>` in the file stands for
 set tabstop=2
+" split the tab into spaces
+set expandtab 
+" set smartindent
+set autoindent
 
 " ¯\_(ツ)_/¯ I have no clue what these REALLY mean/do from quick look at docs
-set smarttab
-set cindent
-set shiftwidth=2 
+" set smarttab
+" set cindent
+set shiftwidth=2
 
-" autosave feature
-"let g:workspace_autosave_always = 1
-" updatetime=3000
+" set autoindent smartindent
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " general mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" change the output of `U` to redo
+nmap U <C-r>
+
+" move up one subline instead of one 'numbered' line
+nnoremap <up> gk
+nnoremap <down> gj
 
 " remap : to ; for ease of commands
 nnoremap ; :
