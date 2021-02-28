@@ -6,12 +6,13 @@
 let g:cursorhold_updatetime = 100
 
 " speed improvements specific for fern (See docs)
-let g:fern_git_status#disable_ignored    = 1
-let g:fern_git_status#disable_untracked  = 1
+" let g:fern_git_status#disable_ignored    = 1
+" let g:fern_git_status#disable_untracked  = 1
 let g:fern_git_status#disable_submodules = 1
 
 " Exclude and include in fern
-let g:fern#default_exclude = '^\%(\.git\|node_modules\)$'
+let g:fern#default_exclude = '^\%(\.git\|node_modules\|\.DS_Store\|\.netrwhist\)$'
+" let g:fern#default_exclude = '^\%(node_modules\)$'
 let g:fern#default_include = ''
 
 
@@ -42,7 +43,7 @@ function! FernInit() abort
   nmap <buffer> p <Plug>(fern-action-new-path)
   nmap <buffer> n <Plug>(fern-action-new-file)
 " fern remove action
-  nmap <buffer> d <Plug>(fern-action-remove)
+  nmap <buffer> D <Plug>(fern-action-remove)
   nmap <buffer> m <Plug>(fern-action-move)
   nmap <buffer> R <Plug>(fern-action-rename)
 " toggles showing hidden files or not
@@ -55,6 +56,7 @@ function! FernInit() abort
   nmap <buffer> h <Plug>(fern-action-open:split)
 " will open file in vertical split
   nmap <buffer> v <Plug>(fern-action-open:vsplit)
+  nmap <buffer> <c-v> <Plug>(fern-action-open:vsplit)
 " move forward in a directory
   nmap <buffer><nowait> < <Plug>(fern-action-leave)
 " move backwards in a directory
@@ -63,6 +65,8 @@ function! FernInit() abort
   nmap <buffer><nowait> e <Plug>(fern-action-expand)
 " collapse folder
   nmap <buffer><nowait> E <Plug>(fern-action-collapse)
+" zoom into fern to reveal more 
+  nmap <buffer><nowait> z <Plug>(fern-action-zoom)
 endfunction
 
 augroup FernGroup
@@ -89,7 +93,6 @@ let g:fern#renderer = 'nerdfont'
 " turn off line numbers and synbol column in fern
 :autocmd FileType fern set nonumber
 :autocmd FileType fern set signcolumn=no
-
 " custom styling for modified or not
 " let g:fern_git_status#indexed_character  = '■'
 " let g:fern_git_status#stained_character  = '■'
