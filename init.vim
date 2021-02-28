@@ -16,6 +16,8 @@ Plug 'jelera/vim-javascript-syntax' 	" better syntax yajs
 " TS Syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 
+" Plug 'MaxMEllon/vim-jsx-pretty'
+
 " git integration in gutter (numbers line)
 Plug 'airblade/vim-gitgutter'
 
@@ -32,7 +34,6 @@ Plug 'lambdalisue/fern-git-status.vim' 	" git integration
 Plug 'lambdalisue/glyph-palette.vim' 	" file icons
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-hijack.vim' 	" make fern the default file exp
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -48,6 +49,10 @@ Plug 'iamcco/markdown-preview.nvim', {
 			\ 'for': 'markdown',
 			\ }
 
+" seamless automatic session management (in lua)
+" Plug 'rmagatti/auto-session'
+
+" Plug 'alvan/vim-closetag'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Plugins
