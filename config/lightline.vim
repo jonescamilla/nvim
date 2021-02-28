@@ -1,7 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " nvim configurations
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " disable show at bottom (--insert--)
 set noshowmode
 
@@ -16,17 +15,17 @@ let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'gitbranch', 'filename', 'modified'] ],
-			\ 	'right': [], 
+      \ 	'right': [],
       \ },
-			\ 'inactive': {
-			\ 	'left': [ ['filename', 'modified']],
-			\ 	'right': [],
-			\ },
-			\ 'component_function': {
-			\ 	'gitbranch': 'LightlineGit',
-			\ 	'mode' : 'LightlineMode',
-			\ 	'filename' : 'LightlineTruncatedFileName'
-			\ },
+      \ 'inactive': {
+      \ 	'left': [ ['readonly', 'filename', 'modified']],
+      \ 	'right': [],
+      \ },
+      \ 'component_function': {
+      \ 	'gitbranch': 'LightlineGit',
+      \ 	'mode' : 'LightlineMode',
+      \ 	'filename' : 'LightlineTruncatedFileName'
+      \ },
       \ }
 
 " not sure what these do (pulled from lightline docs)
