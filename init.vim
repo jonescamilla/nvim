@@ -1,3 +1,11 @@
+" if the vscode extension exists only run my vs settings
+if exists('g:vscode')
+  " vscode extensions
+  source '~/.config/nvim/vs/init.vim'
+" else run normally
+else
+
+
 " Initialize plugin system
 call plug#begin(stdpath('data') . '/plugged')
 
@@ -82,3 +90,6 @@ endfunction
 for file in split(glob(Dot('config/*.vim')), '\n')
 	execute "source" file
 endfor
+
+" end vs if
+endif
