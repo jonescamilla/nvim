@@ -6,7 +6,7 @@
 nmap ghp <Plug>(GitGutterPreviewHunk)
 " stage a hunk
 nmap ghs <Plug>(GitGutterStageHunk)
-" unstage a hunk
+" un-stage a hunk
 nmap ghu <Plug>(GitGutterUndoHunk)
 
 " move to next hunk
