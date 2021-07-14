@@ -26,10 +26,10 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-prettier', 
   \ 'coc-json', 
   \ ]
+  " \ coc-prettier,
+  " \ coc-eslint,
 
 " TODO does not seem to work or is working in a fashion that I did not expect
 " Use tab for trigger completion with characters ahead and navigate.
