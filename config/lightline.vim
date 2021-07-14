@@ -64,13 +64,23 @@ endfunction
 " ignore all necessary and show path from file name w/ dynamic shortening
 function! LightlineTruncatedFileName()
 	" winwidth(0) > 100 ? expand('%') " logic for conditional path shortening
-	return IsIgnored() ? '' : pathshorten(expand('%'))
+	return CondensedPath()
 endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " helper Lightline functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! CondensedPath() abort
+  if expand(':h') == '/'
+    return '/' . expand('%:t')
+  elseif expand('%') == ''
+    return ''
+  else
+    return pathshorten(expand('%:h')) . '/' . expand('%:t')
+  endif
+endfunction
 
 " returns truthy if either condition is met
 function IsIgnored()
