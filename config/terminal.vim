@@ -5,7 +5,7 @@
 " variables used in Term_toggle
 let g:term_buf = 0
 let g:term_win = 0
-let term_size=15
+let term_size=20
 
 " toggles terminal based on certain conditions and accepts height
 function! Term_toggle(height)
