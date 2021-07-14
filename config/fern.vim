@@ -24,7 +24,7 @@ let g:fern#default_include = ''
 let g:fern#disable_default_mappings = 1
 
 " toggle binding for fern
-noremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=25<CR><C-w>=
+noremap <silent> <Leader>f :Fern . -drawer -reveal=% -toggle -width=30<CR><C-w>=
 
 " custom mappings (taken from their documentation added binds at the bottom)
 function! FernInit() abort
