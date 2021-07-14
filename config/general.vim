@@ -34,6 +34,14 @@ set shiftwidth=2
 
 " set autoindent smartindent
 
+" settings for code folding
+set nofoldenable
+set foldlevel=2
+set foldmethod=manual
+
+" auto save and loud views for code folds
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " general mappings
