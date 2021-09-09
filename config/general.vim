@@ -43,6 +43,8 @@ set foldmethod=manual
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
 
+" to display gitblame in status bar
+nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " general mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

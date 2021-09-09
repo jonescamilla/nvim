@@ -49,7 +49,12 @@ Plug 'lambdalisue/glyph-palette.vim' 	" file icons
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/nerdfont.vim'
 
+" have git blame in the status bar
+Plug 'zivyangll/git-blame.vim'
 
+" angular syntax highlighting
+" Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter-angular'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc. Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
